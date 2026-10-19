@@ -2,24 +2,29 @@
 
 - **Data da atualização:** 18/10/2026
 - **Etapa do cronograma:** preparação inicial, antes da implementação
-- **Último marco concluído:** pasta do projeto e documentos de contexto preparados; repositório Git local inicializado; `.gitignore` criado
-- **Estado geral:** preparação do repositório; aplicação ainda não implementada
+- **Último marco concluído:** documentos de contexto registrados no Git; repositório local limpo
+- **Estado geral:** planejamento/documentação; aplicação ainda não implementada
 
-## Estado confirmado
+## Estado confirmado por saídas do PowerShell
 
-- Caminho informado e confirmado pelo PowerShell: `C:\Users\aglib_i2fcqhe\Documents\Projetos\VixDesk`.
+- Caminho do projeto: `C:\Users\aglib_i2fcqhe\Documents\Projetos\VixDesk`.
 - `git --version` retornou `git version 2.51.0.windows.1`.
-- `git init` retornou `Initialized empty Git repository in C:/Users/aglib_i2fcqhe/Documents/Projetos/VixDesk/.git/`.
-- O usuário criou `.gitignore` com regras para build Java, dependências Angular/Node, IDEs, arquivos de ambiente locais, logs e arquivos de sistema.
-- `git status --short` retornou `?? .gitignore` e `?? docs/`. Esses itens sem rastreamento são esperados antes do primeiro commit.
-- Os quatro arquivos na pasta `docs\contexto` foram listados pelo PowerShell: `CHECKPOINT_TEMPLATE.md` (929 bytes), `CONTEXTO_VIXDESK.md` (5785 bytes), `DECISOES.md` (1580 bytes) e `PROTOCOLO_DE_CONTINUIDADE.md` (3827 bytes).
+- `git branch --show-current` retornou `main`.
+- `git rev-parse --show-toplevel` retornou `C:/Users/aglib_i2fcqhe/Documents/Projetos/VixDesk`.
+- `git log -1 --oneline` retornou `e7d03ac (HEAD -> main) chore: add project context and initial setup`.
+- `git status` retornou `On branch main` e `nothing to commit, working tree clean`.
+- `.gitignore` existe na raiz; seu conteúdo foi conferido no terminal.
+- `CHECKPOINT_ATUAL.md` existe na raiz.
+- Estes quatro documentos estão em `docs/contexto/`: `CHECKPOINT_TEMPLATE.md`, `CONTEXTO_VIXDESK.md`, `DECISOES.md` e `PROTOCOLO_DE_CONTINUIDADE.md`.
+- O commit atual existe. A mensagem de uma tentativa subsequente de `git commit` foi `nothing to commit, working tree clean`; isso significa que naquela tentativa não havia mudanças pendentes, não que o commit observado no log tenha falhado.
 
-## Estrutura real de pastas confirmada até agora
+## Estrutura conhecida
 
 ```text
 VixDesk/
-├── .git/                         # criado pelo git init
-├── .gitignore                    # criado; ainda não commitado
+├── .git/                         # repositório local
+├── .gitignore                    # commit de documentação
+├── CHECKPOINT_ATUAL.md           # checkpoint na raiz
 └── docs/
     └── contexto/
         ├── CHECKPOINT_TEMPLATE.md
@@ -28,61 +33,32 @@ VixDesk/
         └── PROTOCOLO_DE_CONTINUIDADE.md
 ```
 
-Esta estrutura reflete os comandos e saídas compartilhados até este checkpoint. Nenhuma pasta `backend/`, `frontend/` ou `tests/` foi confirmada.
-
-## Arquivos-chave e função
-
-- `docs/contexto/CONTEXTO_VIXDESK.md`: objetivo, escopo, stack planejada e regras de fonte da verdade.
-- `docs/contexto/PROTOCOLO_DE_CONTINUIDADE.md`: regras de continuidade e validação.
-- `docs/contexto/DECISOES.md`: decisões aceitas, provisórias e pendências.
-- `docs/contexto/CHECKPOINT_TEMPLATE.md`: modelo para próximos checkpoints.
-- `.gitignore`: exclui dependências, arquivos de build, IDE e configurações locais/segredos conforme as regras criadas pelo usuário.
-
-## Funcionalidades
-
-- **Concluídas e verificadas:** estrutura de documentação; inicialização do Git local; criação do `.gitignore`.
-- **Em andamento:** validação inicial e preparação do primeiro commit.
-- **Pendentes:** especificação mínima dos requisitos; criação do README; aplicação Spring Boot; front-end Angular; banco de dados; autenticação; testes; Docker/CI; AWS.
-
-## Comandos executados e resultados
-
-- `git --version` → `git version 2.51.0.windows.1`.
-- `Test-Path ".git"` → `False` antes da inicialização.
-- `git init` → repositório vazio criado no caminho do VixDesk.
-- `Test-Path ".gitignore"` → `False` antes da criação.
-- Criação do `.gitignore` via here-string PowerShell → comando retornou ao prompt sem mensagem de erro.
-- `git status --short` → `?? .gitignore` e `?? docs/`.
+A estrutura acima é baseada nas saídas do terminal enviadas até agora; pode ser atualizada quando houver uma nova listagem completa.
 
 ## Git
 
-- Branch atual: **não verificada**.
-- Último commit/hash: **nenhum commit confirmado; repositório foi inicializado vazio**.
-- Último `git status --short` conhecido:
+- **Branch:** `main`.
+- **Último commit observado:** `e7d03ac chore: add project context and initial setup`.
+- **Estado observado:** árvore de trabalho limpa.
+- **Repositório remoto:** não configurado/verificado.
+- **Verificação adicional opcional:** `git show --stat --oneline HEAD` pode confirmar o resumo exato do commit.
 
-```text
-?? .gitignore
-?? docs/
-```
+## Confirmado, não implementado e não verificado
 
-## Erros conhecidos e tentativas
-
-- Uma execução anterior retornou `else : O termo 'else' não é reconhecido...` porque o `else` foi executado isoladamente, fora do bloco `if`. Depois disso, o usuário executou os comandos individualmente e criou o repositório e o `.gitignore` com sucesso. Não há evidência de dano a arquivos.
-
-## Decisões desde o último checkpoint
-
-- Nenhuma alteração de escopo. O nome VixDesk continua provisório e o domínio continua sendo sistema de chamados de TI.
+- **Confirmado:** pasta local, Git instalado, branch `main`, checkpoint na raiz, `.gitignore`, quatro documentos de contexto, commit no log e árvore de trabalho limpa.
+- **Não implementado:** README principal, aplicação Spring Boot, Angular, schema de banco dedicado, autenticação, testes, Docker, CI/CD, integração n8n e implantação AWS.
+- **Não verificado neste projeto:** versões/configuração de JDK, Node.js/npm, Angular CLI, Docker e PostgreSQL.
+- **Nome VixDesk e domínio de sistema de chamados:** decisões de planejamento; verificar disponibilidade do nome antes de publicar.
+- A AglibertoSTORE, os exercícios de programação e o estudo para o CRECI-ES pertencem a outras frentes e não devem ser misturados a este repositório.
 
 ## Próxima tarefa única
 
-- **Tarefa:** verificar branch atual, revisar `.gitignore` e confirmar a lista dos quatro documentos; então preparar o primeiro commit de documentação.
-- **Arquivos envolvidos:** `.gitignore`, `docs/contexto/*`, `CHECKPOINT_ATUAL.md`.
-- **Critério objetivo de aceitação:** todos os arquivos esperados estão presentes; `.gitignore` não contém segredos; `git status --short` lista apenas os novos arquivos esperados; commit inicial criado só após revisão.
-- **Como testar:** `git branch --show-current`, `Get-Content .gitignore`, `Get-ChildItem docs\contexto | Select-Object Name,Length` e `git status --short`.
+**Revisar o contexto e fechar os requisitos mínimos da primeira versão (MVP) antes de criar a aplicação.**
 
-## Dúvidas / itens não verificados
+Critério de aceitação:
+1. Definir os perfis e o fluxo principal de atendimento.
+2. Listar os campos obrigatórios de um chamado e os estados permitidos.
+3. Definir as primeiras operações da API e o que será deixado para depois.
+4. Registrar as decisões em `DECISOES.md` e um documento `docs/REQUISITOS_MVP.md`.
 
-- Nome da branch atual.
-- Conteúdo efetivo do `.gitignore` no disco ainda não foi relido após a gravação.
-- Repositório remoto do GitHub não foi configurado nem verificado.
-- Versões/instalação de JDK, Node.js/npm, Angular CLI, Docker e PostgreSQL não foram verificadas neste projeto.
-- Nenhuma compilação, teste, endpoint ou implantação foi executado.
+Não criar código de aplicação antes de concluir essa definição. Não presumir que ferramentas foram instaladas ou testes executados.

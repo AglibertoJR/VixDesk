@@ -1,7 +1,7 @@
 # VixDesk — Contexto oficial do projeto
 
-**Versão do documento:** 1.0
-**Data de criação:** 18/10/2026
+**Versão do documento:** 1.1
+**Data de atualização:** 18/10/2026
 **Status:** planejamento; implementação ainda não iniciada neste projeto.
 
 ## 1. Objetivo
@@ -55,25 +55,36 @@ Plano inicial de 50 dias: 19/10/2026 a 07/12/2026. O cronograma é uma meta flex
 
 ## 6. Arquitetura inicial prevista
 
-Monólito modular, com front-end Angular separado do back-end Spring Boot e banco PostgreSQL. Estrutura de pastas sugerida, ainda não criada nem verificada:
+Monólito modular, com front-end Angular separado do back-end Spring Boot e banco PostgreSQL. A estrutura desejada futuramente é:
 
 ```text
 VixDesk/
-├── backend/
-├── frontend/
+├── backend/       # ainda não criado
+├── frontend/      # ainda não criado
 ├── docs/
-├── tests/
-├── .gitignore
-└── README.md
+│   └── contexto/  # criado e confirmado
+├── tests/         # ainda não criado
+├── .gitignore     # criado e confirmado
+├── CHECKPOINT_ATUAL.md  # criado na raiz e confirmado
+└── README.md      # ainda não criado
 ```
 
 ## 7. Estado confirmado neste momento
 
-- A ideia escolhida para o projeto deste chat é um sistema de chamados de TI.
-- AglibertoSTORE é outro projeto e não deve ser modificada nem reutilizada aqui.
-- O projeto VixDesk ainda está em fase de planejamento neste chat.
-- Não há confirmação de que pasta local, repositório Git, aplicação Spring Boot ou front-end Angular já tenham sido criados.
-- Não há evidência atual de builds, testes, endpoints ou deploy executados.
+Com base nas saídas do PowerShell enviadas em 18/10/2026:
+
+- A pasta local existe em `C:\Users\aglib_i2fcqhe\Documents\Projetos\VixDesk`.
+- O repositório Git local está inicializado e a branch atual é `main`.
+- Git versão `2.51.0.windows.1` foi confirmado.
+- O histórico apresenta o commit `e7d03ac` com a mensagem `chore: add project context and initial setup` (`git log -1 --oneline`).
+- `git status` retornou `On branch main` e `nothing to commit, working tree clean`.
+- `.gitignore` existe na raiz; seu conteúdo foi conferido no terminal.
+- `CHECKPOINT_ATUAL.md` existe na raiz.
+- Os arquivos `CHECKPOINT_TEMPLATE.md`, `CONTEXTO_VIXDESK.md`, `DECISOES.md` e `PROTOCOLO_DE_CONTINUIDADE.md` existem em `docs\contexto`.
+- A árvore de trabalho foi confirmada limpa após o commit.
+- O repositório remoto não foi configurado nem verificado.
+- O projeto ainda está na fase de preparação; aplicação, back-end, front-end, banco de dados dedicado, testes e deploy não foram implementados/verificados.
+- O conteúdo exato do commit ainda pode ser confirmado adicionalmente com `git show --stat --oneline HEAD`; essa verificação não foi incluída na saída compartilhada até agora.
 
 ## 8. Regras de fonte da verdade
 

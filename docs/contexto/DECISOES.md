@@ -10,11 +10,18 @@ Use as etiquetas **ACEITA**, **PROVISÓRIA**, **PENDENTE** ou **REJEITADA**. Acr
 | D-004 | 18/10/2026 | PROVISÓRIA | Arquitetura: front-end Angular separado de API Spring Boot, PostgreSQL e monólito modular | Adequado ao prazo e ao nível atual; rever apenas se houver razão concreta. |
 | D-005 | 18/10/2026 | ACEITA | Trabalhar com checkpoints documentados e fatos comprovados | Reduz dependência do histórico longo do chat. |
 | D-006 | 18/10/2026 | ACEITA | AWS somente após estimar custos e revisar credenciais/permissões | Evitar gastos inesperados e exposição de segredos. |
+| D-007 | 18/10/2026 | ACEITA | Fazer o primeiro commit somente depois de inspecionar os arquivos staged | Evitar incluir arquivos inesperados e criar um marco inicial verificável. |
+| D-008 | 18/10/2026 | ACEITA | Registrar checkpoints com o último commit e o estado atual do Git | O checkpoint deve refletir evidências atuais, não um estado antigo. |
 
-## Pendências antes da implementação
+## Estado confirmado da preparação
 
-- [ ] Confirmar criação da pasta local `VixDesk`.
-- [ ] Confirmar repositório Git local e/ou remoto; não presumir que existe.
+- [x] Pasta local `VixDesk` confirmada em `C:\Users\aglib_i2fcqhe\Documents\Projetos\VixDesk`.
+- [x] Repositório Git local inicializado.
+- [x] Branch `main` confirmada.
+- [x] `.gitignore` criado e conteúdo revisado no terminal.
+- [x] Checkpoint salvo na raiz e quatro documentos de contexto presentes em `docs/contexto/`.
+- [x] Commit de documentação registrado (`e7d03ac`, `chore: add project context and initial setup`); `git status` confirmou árvore de trabalho limpa.
+- [ ] Configurar repositório remoto, se desejado, e só depois verificar a publicação.
 - [ ] Confirmar versões instaladas de JDK, Node.js/npm, Angular CLI, Docker e PostgreSQL.
 - [ ] Confirmar restrições de hardware/tempo/orçamento relevantes.
 - [ ] Definir e registrar a primeira versão mínima dos requisitos.
